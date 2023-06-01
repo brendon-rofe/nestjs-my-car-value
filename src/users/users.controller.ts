@@ -24,12 +24,12 @@ export class UsersController {
 
   @Get('/whoami')
   whoAmI(@Session() session: any) {
-    return this.usersService.findOne(session.userId);
+    return this.usersService.findOne(session.id);
   };
 
   @Post('/signout')
   signOut(@Session() session: any) {
-    session.userId = null;
+    session.id = null;
   };
 
   @Post('/signup')
